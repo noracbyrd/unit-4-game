@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Collector</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>
+        <p><span id="numberTarget"></span></p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" id="crystal1">
+                <img src="assets/images/crystal1.png">
+            </div>
+            <div class="col-md-3" id="crystal2">
+                <img src="assets/images/crystal2.png">
+            </div>
+            <div class="col-md-3" id="crystal3">
+                    <img src="assets/images/crystal3.png">
+            </div>
+            <div class="col-md-3" id="crystal4">
+                    <img src="assets/images/crystal4.png">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //set overall variables
+        var numberTarget = document.getElementById("numberTarget");
+        $(document).ready(function () {
+            // generate the number
+            var randomTarget = Math.floor(Math.random() * 102 + 19);
+            numberTarget.textContent = randomTarget;
+
+
+
+        })
+    </script>
+</body>
+
+</html>

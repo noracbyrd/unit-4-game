@@ -13,6 +13,7 @@
 <body>
     <div>
         <p><span id="numberTarget"></span></p>
+        <p><span id="crystalsCollected"></span></p>
     </div>
     <div class="container">
         <div class="row">
@@ -32,11 +33,29 @@
     </div>
     <script type="text/javascript">
         //set overall variables
+        //variable for the target number, chosen at random
         var numberTarget = document.getElementById("numberTarget");
+        //variable for the user's current total
+        var crystalsCollected = document.getElementById("crystalsCollected");
+        
         $(document).ready(function () {
-            // generate the number
+            // generate the number you're trying to collect
             var randomTarget = Math.floor(Math.random() * 102 + 19);
-            numberTarget.textContent = randomTarget;
+            numberTarget.textContent = "Try to collect " + randomTarget + " crystals!";
+            // generate the four crystals' hidden values
+            var crystal1Worth = Math.floor(Math.random() * 12 + 1);
+            var crystal2Worth = Math.floor(Math.random() * 12 + 1);
+            var crystal3Worth = Math.floor(Math.random() * 12 + 1);
+            var crystal4Worth = Math.floor(Math.random() * 12 + 1);
+            //set inital crystal count to 0
+            var crystalsCollected = 0;
+            //create flag to confirm that user didn't exceed crystal count (do I need a flag to check if equal?)
+            var underTotal = true;
+
+            
+
+
+
 
 
 

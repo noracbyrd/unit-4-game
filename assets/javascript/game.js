@@ -3,8 +3,7 @@
 var numberTarget = document.getElementById("numberTarget-text");
 //variable for the user's current total
 var crystalsCollected = document.getElementById("crystalsCollected-text");
-var wins = document.getElementById("wins-text");
-var losses = document.getElementById("losses-text");
+
 // generate the number you're trying to collect
 var randomTarget = Math.floor(Math.random() * 102 + 19);
 numberTarget.textContent = "Try to collect " + randomTarget + " crystals!";
@@ -12,9 +11,9 @@ numberTarget.textContent = "Try to collect " + randomTarget + " crystals!";
 var crystalTotal = 0;
 crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
 var winsCounter = 0;
-wins.textContent = "Wins: " + winsCounter;
+$("#wins-text").text("Wins: "+ winsCounter);
 var lossesCounter = 0;
-losses.textContent = "Losses: " + lossesCounter;
+$("#losses-text").text("Losses: " + lossesCounter);
 // generate the four crystals' hidden values
 var crystal1Worth = Math.floor(Math.random() * 12 + 1);
 var crystal2Worth = Math.floor(Math.random() * 12 + 1);
@@ -37,12 +36,12 @@ $(document).ready(function () {
         crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
         if (crystalTotal === randomTarget) {
             winsCounter++;
-            wins.textContent = "Wins: " + winsCounter;
+            $("#wins-text").text("Wins: " + winsCounter);
             clear();
             crystal1Worth = Math.floor(Math.random() * 12 + 1);
         } else if (crystalTotal > randomTarget) {
             lossesCounter++;
-            losses.textContent = "Losses: " + lossesCounter;
+            $("#losses-text").text("Losses: " + lossesCounter);
             clear();
             crystal1Worth = Math.floor(Math.random() * 12 + 1);
         }
@@ -52,12 +51,12 @@ $(document).ready(function () {
         crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
         if (crystalTotal === randomTarget) {
             winsCounter++;
-            wins.textContent = "Wins: " + winsCounter;
+            $("#wins-text").text("Wins: " + winsCounter);
             clear();
             crystal2Worth = Math.floor(Math.random() * 12 + 1);
         } else if (crystalTotal > randomTarget) {
             lossesCounter++;
-            losses.textContent = "Losses: " + lossesCounter;
+            $("#losses-text").text("Losses: " + lossesCounter);
             clear();
             crystal2Worth = Math.floor(Math.random() * 12 + 1);
         }
@@ -67,12 +66,12 @@ $(document).ready(function () {
         crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
         if (crystalTotal === randomTarget) {
             winsCounter++;
-            wins.textContent = "Wins: " + winsCounter;
+            $("#wins-text").text("Wins: " + winsCounter);
             clear();
             crystal3Worth = Math.floor(Math.random() * 12 + 1);
         } else if (crystalTotal > randomTarget) {
             lossesCounter++;
-            losses.textContent = "Losses: " + lossesCounter;
+            $("#losses-text").text("Losses: " + lossesCounter);
             clear();
             crystal3Worth = Math.floor(Math.random() * 12 + 1);
         }
@@ -82,12 +81,12 @@ $(document).ready(function () {
         crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
         if (crystalTotal === randomTarget) {
             winsCounter++;
-            wins.textContent = "Wins: " + winsCounter;
+            $("#wins-text").text("Wins: " + winsCounter);
             clear();
             crystal4Worth = Math.floor(Math.random() * 12 + 1);
         } else if (crystalTotal > randomTarget) {
             lossesCounter++;
-            losses.textContent = "Losses: " + lossesCounter;
+            $("#losses-text").text("Losses: " + lossesCounter);
             clear();
             crystal4Worth = Math.floor(Math.random() * 12 + 1);
         }

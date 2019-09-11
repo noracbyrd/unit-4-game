@@ -1,21 +1,11 @@
-header, footer {
+footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
 }
-#navImage{
-    z-index: 1;
-    position: absolute;
-}
-#title{
-    text-align: center;
-    color: #ffffff;
-    font-family: 'Chilanka', cursive;
-    font-weight: bolder;
-    z-index: 99;
-    position: relative;
-    bottom: 100px;
-}
 img {
-    display: block;
+    position: relative;
     margin-left: auto;
     margin-right: auto;
 }
@@ -26,5 +16,16 @@ p {
     text-align: center;
     font-weight: bold;
     font-family: 'Chilanka', cursive;
-    font-size: 16px;
+}
+#title{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Chilanka', cursive;
+    font-weight: bolder;
+    font-size: 20;
+    position: absolute;
+    bottom: 100px;
+}
+#navImage{
+    position: relative;
 }

@@ -1,99 +1,90 @@
-//set overall variables
-//variable for the target number, chosen at random
-var numberTarget = document.getElementById("numberTarget-text");
-//variable for the user's current total
-var crystalsCollected = document.getElementById("crystalsCollected-text");
+// Set overall variables
 
-// generate the number you're trying to collect
+// Variable to generate the target number of crystals
 var randomTarget = Math.floor(Math.random() * 102 + 19);
-numberTarget.textContent = "Try to collect " + randomTarget + " crystals!";
-//set inital crystal count to 0
+$("#numberTarget-text").text("Try to collect " + randomTarget + " crystals!");
+
+// Set inital crystal count and wins/losses counts to 0
 var crystalTotal = 0;
-crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
+$("#crystalsCollected-text").text("You've collected " + crystalTotal + " crystals!");
 var winsCounter = 0;
-$("#wins-text").text("Wins: "+ winsCounter);
+$("#wins-text").text("Wins: " + winsCounter);
 var lossesCounter = 0;
 $("#losses-text").text("Losses: " + lossesCounter);
-// generate the four crystals' hidden values
+
+// Variables to generate the four crystals' initial hidden values
 var crystal1Worth = Math.floor(Math.random() * 12 + 1);
 var crystal2Worth = Math.floor(Math.random() * 12 + 1);
 var crystal3Worth = Math.floor(Math.random() * 12 + 1);
 var crystal4Worth = Math.floor(Math.random() * 12 + 1);
-var clear = function(){
+
+// Function to reset counters to zero and to change the crystal values to a new random number
+var clear = function () {
     randomTarget = Math.floor(Math.random() * 102 + 19);
-    numberTarget.textContent = "Try to collect " + randomTarget + " crystals!";
+    $("#numberTarget-text").text("Try to collect " + randomTarget + " crystals!");
     crystalTotal = 0;
-    crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!"; 
+    $("#crystalsCollected-text").text("You've collected " + crystalTotal + " crystals!");
+    crystal1Worth = Math.floor(Math.random() * 12 + 1);
+    crystal2Worth = Math.floor(Math.random() * 12 + 1);
+    crystal3Worth = Math.floor(Math.random() * 12 + 1);
+    crystal4Worth = Math.floor(Math.random() * 12 + 1);
 }
 
 $(document).ready(function () {
-    
-    //create flag to confirm that user didn't exceed crystal count (do I need a flag to check if equal?)
-    var underTotal = true;
-    //on-clicks for the four crystals
+
+    // On-clicks for the four crystals
+
     $("#crystal1").on("click", function () {
         crystalTotal += crystal1Worth;
-        crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
+        $("#crystalsCollected-text").text("You've collected " + crystalTotal + " crystals!");
+        // Conditionals to check if the player won or lost
         if (crystalTotal === randomTarget) {
             winsCounter++;
             $("#wins-text").text("Wins: " + winsCounter);
             clear();
-            crystal1Worth = Math.floor(Math.random() * 12 + 1);
         } else if (crystalTotal > randomTarget) {
             lossesCounter++;
             $("#losses-text").text("Losses: " + lossesCounter);
             clear();
-            crystal1Worth = Math.floor(Math.random() * 12 + 1);
         }
     })
     $("#crystal2").on("click", function () {
         crystalTotal += crystal2Worth;
-        crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
+        $("#crystalsCollected-text").text("You've collected " + crystalTotal + " crystals!");
         if (crystalTotal === randomTarget) {
             winsCounter++;
             $("#wins-text").text("Wins: " + winsCounter);
             clear();
-            crystal2Worth = Math.floor(Math.random() * 12 + 1);
         } else if (crystalTotal > randomTarget) {
             lossesCounter++;
             $("#losses-text").text("Losses: " + lossesCounter);
             clear();
-            crystal2Worth = Math.floor(Math.random() * 12 + 1);
         }
     })
     $("#crystal3").on("click", function () {
         crystalTotal += crystal3Worth;
-        crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
+        $("#crystalsCollected-text").text("You've collected " + crystalTotal + " crystals!");
         if (crystalTotal === randomTarget) {
             winsCounter++;
             $("#wins-text").text("Wins: " + winsCounter);
             clear();
-            crystal3Worth = Math.floor(Math.random() * 12 + 1);
         } else if (crystalTotal > randomTarget) {
             lossesCounter++;
             $("#losses-text").text("Losses: " + lossesCounter);
             clear();
-            crystal3Worth = Math.floor(Math.random() * 12 + 1);
         }
     })
     $("#crystal4").on("click", function () {
         crystalTotal += crystal4Worth;
-        crystalsCollected.textContent = "You've collected " + crystalTotal + " crystals!";
+        $("#crystalsCollected-text").text("You've collected " + crystalTotal + " crystals!");
         if (crystalTotal === randomTarget) {
             winsCounter++;
             $("#wins-text").text("Wins: " + winsCounter);
             clear();
-            crystal4Worth = Math.floor(Math.random() * 12 + 1);
         } else if (crystalTotal > randomTarget) {
             lossesCounter++;
             $("#losses-text").text("Losses: " + lossesCounter);
             clear();
-            crystal4Worth = Math.floor(Math.random() * 12 + 1);
         }
     })
-
-
-
-
-
 })
